@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const crypto = require('crypto');
-const uuidv1 = require('uuid/v1');
+// Note that uuidv1 is not very secure and can be hacked read more here
+// https://stackoverflow.com/questions/20342058/which-uuid-version-to-use
+const { v1 : uuidv1 } = require('uuid');
 
 const userSchema = new mongoose.Schema({
   name : {
