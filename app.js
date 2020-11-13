@@ -11,6 +11,8 @@ const app = express();
 dotenv.config()
 const port = process.env.PORT || 1337;
 const db = process.env.MONGO_LOCALHOST;
+
+const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/user');
 
 // DB
@@ -28,6 +30,7 @@ app.use(cookieParser());
 app.use(expressValidator())
 
 // Routes tunred into middleware!
+app.use('/api', authRoutes);
 app.use('/api', userRoutes);
 
 app.listen(port, () => {
