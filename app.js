@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const expressValidator = require('express-validator');
@@ -29,7 +30,8 @@ mongoose.connect(db, {
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(expressValidator())
+app.use(expressValidator());
+app.use(cors());
 
 // Routes tunred into middleware!
 app.use('/api', authRoutes);
