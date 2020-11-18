@@ -13,6 +13,7 @@ dotenv.config()
 const port = process.env.PORT || 1337;
 const db = process.env.MONGO_LOCALHOST;
 
+// Routes required
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/user');
 const categoryRoutes = require('./routes/category');

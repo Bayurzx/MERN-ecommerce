@@ -21,7 +21,7 @@ exports.read = (req, res) => {
 
 exports.update = (req, res) => {
   User.findOneAndUpdate(
-    {_id: req.profile._id}, 
+    {_id: req.profile._id},
     {$set: req.body},
     {new: true},
     (err, user) => {
