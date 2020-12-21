@@ -4,7 +4,6 @@ const expressJwt = require('express-jwt'); // for authorization check
 const { errorHandler } = require('../helpers/dbErrorHandler.js')
 
 exports.signup = (req, res) => {
-  console.log("req.body", req.body)
   const user = new User(req.body);
   user.save((error, user) => {
     if (error) {
