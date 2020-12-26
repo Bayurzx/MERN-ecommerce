@@ -33,7 +33,7 @@ exports.processPayment = (req, res) => {
   }, (error, response) => {
     if (error) {
       res.status(500).json(error);
-      console.log("braintree_err", err)
+      console.log("braintree_err", error)
     } else {
       res.json(response);
     }
